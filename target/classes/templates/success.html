@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>success</title>
+</head>
+<body>
+    <h1>成功</h1>
+    <div th:text="你好"></div>
+<hr/>
+    <div>下面第一个使用th:text为转义文本,第二个th:utext为不转义</div>
+    <div th:text="${hello}"></div>
+    <div th:utext="${hello}"></div>
+<hr/>
+    <div>th:each每遍历一次，都会生成一个当前的标签，下面是其遍历生成的三个h4标签</div>
+    <h4 th:text="${user}" th:each="user:${users}"></h4>
+<hr/>
+    <h4>
+        <div>下面是th:each遍历生成的三个span标签</div>
+        <span th:each="user:${users}">[[${user}]]</span>
+    </h4>
+</body>
+</html>
