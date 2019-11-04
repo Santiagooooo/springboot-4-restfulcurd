@@ -31,14 +31,13 @@ public class MyMvcConfig implements WebMvcConfigurer {
 
             //注册拦截器
 
-//            @Override
-//            public void addInterceptors(InterceptorRegistry registry) {
-//                registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
-//                        .excludePathPatterns("/index.html", "/", "/user/login");
-//            }
+            @Override
+            public void addInterceptors(InterceptorRegistry registry) {
+                registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
+                        .excludePathPatterns("/index.html", "/", "/user/login");
+            }
         };
         return adapter;
-
     }
 
     @Bean
